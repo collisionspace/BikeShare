@@ -10,6 +10,8 @@ import UIKit
 
 protocol BikeShareDisplay: class {
     func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?)
+    func showActivityIndicatorView()
+    func hideActivityIndicatorView()
 }
 private enum Constants {
     static let cellReuseIdentifier = "BikeShareCity"
@@ -19,6 +21,7 @@ private enum Constants {
 class BikeShareViewController: UIViewController, BikeShareDisplay {
 
     @IBOutlet weak var bikeShareTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var interactor: BikeShareUseCase?
     var bikeShareCities = [BikeShareCityViewModel]()
@@ -64,6 +67,14 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
             bikeShareCities = viewModel
             bikeShareTableView.reloadData()
         }
+    }
+    
+    func showActivityIndicatorView() {
+        activityIndicatorView.isHidden = false
+    }
+    
+    func hideActivityIndicatorView() {
+        activityIndicatorView.isHidden = true
     }
 }
 
