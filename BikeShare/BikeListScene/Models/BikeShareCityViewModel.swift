@@ -6,8 +6,6 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import Foundation
-
 class BikeShareCityViewModel {
     private(set) var href: String?
     private(set) var bikeShareName: String?

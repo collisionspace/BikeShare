@@ -10,6 +10,7 @@ import UIKit
 
 protocol BikeShareDisplay: class {
     func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?)
+    func displayError(title: String, message: String, buttonTitle: String)
     func showActivityIndicatorView()
     func hideActivityIndicatorView()
 }
@@ -58,7 +59,7 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
         getData()
     }
     
-    func getData() {
+    private func getData() {
         interactor?.getBikeShareCities()
     }
     
@@ -67,6 +68,12 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
             bikeShareCities = viewModel
             bikeShareTableView.reloadData()
         }
+    }
+    
+    func displayError(title: String, message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func showActivityIndicatorView() {

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import Foundation
 import ObjectMapper
 
 class BikeShareCityResponse: Mappable {
