@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol BikeShareP {
+protocol BikeSharePresentationLogic {
     func presentBikeShareCities(response: BikeShareCityResponse)
 }
-class BikeSharePresenter: BikeShareP {
+class BikeSharePresenter: BikeSharePresentationLogic {
     weak var viewController: BikeShareDisplay?
     
     func presentBikeShareCities(response: BikeShareCityResponse) {
