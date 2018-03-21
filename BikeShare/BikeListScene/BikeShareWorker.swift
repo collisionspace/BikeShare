@@ -15,7 +15,7 @@ private enum Constants {
 }
 class BikeShareWorker {
     func getBikeShareCities(completion:@escaping (Result<BikeShareCityResponse>) -> Void) {
-        Alamofire.request("Constants.baseUrl + Constants.bikeShareEndPoint")
+        Alamofire.request(Constants.baseUrl + Constants.bikeShareEndPoint)
             .responseObject { (response: DataResponse<BikeShareCityResponse>) in
                 completion(response.result)
         }
