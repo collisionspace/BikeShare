@@ -20,6 +20,7 @@ class BikeSharePresenter: BikeSharePresentationLogic {
             BikeShareCityViewModel(href: bikeShareCity.href, bikeShareName: bikeShareCity.name, location: bikeShareCity.location)
         }
         
+        viewController?.hideActivityIndicatorView()
         viewController?.displayBikeShareCities(viewModel: viewModels)
     }
 }
