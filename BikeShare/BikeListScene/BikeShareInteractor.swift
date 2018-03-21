@@ -6,8 +6,6 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import Foundation
-
 protocol BikeShareUseCase {
     func getBikeShareCities()
 }
@@ -21,7 +19,7 @@ class BikeShareInteractor: BikeShareUseCase {
             case .success(let bikeShareCities):
                 self.presenter?.presentBikeShareCities(response: bikeShareCities)
             case .failure(let error):
-                print("error = \(error)")
+                self.presenter?.presentError(error: error)
             }
         }
     }

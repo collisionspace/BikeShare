@@ -10,6 +10,9 @@ import UIKit
 
 protocol BikeShareDisplay: class {
     func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?)
+    func displayError(title: String, message: String, buttonTitle: String)
+    func showActivityIndicatorView()
+    func hideActivityIndicatorView()
 }
 private enum Constants {
     static let cellReuseIdentifier = "BikeShareCity"
@@ -19,6 +22,7 @@ private enum Constants {
 class BikeShareViewController: UIViewController, BikeShareDisplay {
 
     @IBOutlet weak var bikeShareTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var interactor: BikeShareUseCase?
     var bikeShareCities = [BikeShareCityViewModel]()
@@ -55,7 +59,7 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
         getData()
     }
     
-    func getData() {
+    private func getData() {
         interactor?.getBikeShareCities()
     }
     
@@ -64,6 +68,20 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
             bikeShareCities = viewModel
             bikeShareTableView.reloadData()
         }
+    }
+    
+    func displayError(title: String, message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showActivityIndicatorView() {
+        activityIndicatorView.isHidden = false
+    }
+    
+    func hideActivityIndicatorView() {
+        activityIndicatorView.isHidden = true
     }
 }
 
