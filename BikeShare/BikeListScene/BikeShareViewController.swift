@@ -29,25 +29,9 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
     
     // MARK: Oject lifecycle
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-    
-    // MARK: Setup
-    
-    private func setup() {
-        let viewController = self
-        let interactor = BikeShareInteractor()
-        let presenter = BikeSharePresenter()
-        viewController.interactor = interactor
-        interactor.presenter = presenter
-        presenter.viewController = viewController
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        BikeShareConfigurator.sharedInstance.configure(viewController: self)
     }
     
     // MARK: View lifecycle

@@ -18,10 +18,7 @@ class BikeSharePresenter: BikeSharePresentationLogic {
     weak var viewController: BikeShareDisplay?
     
     func presentBikeShareCities(response: BikeShareCityResponse) {
-        let viewModels = response.networks?.map {
-            (bikeShareCity: BikeShareCity) -> BikeShareCityViewModel in
-            BikeShareCityViewModel(href: bikeShareCity.href, bikeShareName: bikeShareCity.name, location: bikeShareCity.location)
-        }
+        let viewModels = mapDataToViewModels(response: response)
         
         viewController?.hideActivityIndicatorView()
         viewController?.displayBikeShareCities(viewModel: viewModels)
