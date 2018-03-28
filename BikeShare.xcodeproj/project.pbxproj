@@ -22,6 +22,8 @@
 		064F9C3F2062268F00F1646E /* BikeShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F9C3E2062268F00F1646E /* BikeShareViewController.swift */; };
 		064F9C4320622BA900F1646E /* BikeShareCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064F9C4220622BA900F1646E /* BikeShareCityTableViewCell.xib */; };
 		064F9C4520622DC100F1646E /* BikeShareCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F9C4420622DC100F1646E /* BikeShareCityTableViewCell.swift */; };
+		064F9C4A206B8D4800F1646E /* BikeShareMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F9C49206B8D4800F1646E /* BikeShareMapper.swift */; };
+		064F9C4D206B98BC00F1646E /* BikeShareConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F9C4C206B98BC00F1646E /* BikeShareConfigurator.swift */; };
 		3D53D51532BCFB1439959445 /* Pods_BikeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83AC6E83DA824934800AF4F /* Pods_BikeShare.framework */; };
 		8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		064F9C3E2062268F00F1646E /* BikeShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareViewController.swift; sourceTree = "<group>"; };
 		064F9C4220622BA900F1646E /* BikeShareCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeShareCityTableViewCell.xib; sourceTree = "<group>"; };
 		064F9C4420622DC100F1646E /* BikeShareCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareCityTableViewCell.swift; sourceTree = "<group>"; };
+		064F9C49206B8D4800F1646E /* BikeShareMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareMapper.swift; sourceTree = "<group>"; };
+		064F9C4C206B98BC00F1646E /* BikeShareConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareConfigurator.swift; sourceTree = "<group>"; };
 		18A059B2BE66AA88E367D616 /* Pods-BikeShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShare/Pods-BikeShare.debug.xcconfig"; sourceTree = "<group>"; };
 		1B3D189D609940490235853A /* Pods-BikeShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.release.xcconfig"; sourceTree = "<group>"; };
 		64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeShareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,15 +144,25 @@
 		064F9C4120622ACB00F1646E /* BikeListScene */ = {
 			isa = PBXGroup;
 			children = (
+				064F9C4B206B8DDB00F1646E /* Mapper */,
 				064F9C4020622ABC00F1646E /* Models */,
 				064F9C4220622BA900F1646E /* BikeShareCityTableViewCell.xib */,
 				064F9C382062235C00F1646E /* BikeShareWorker.swift */,
 				064F9C3A2062246D00F1646E /* BikeShareInteractor.swift */,
+				064F9C4C206B98BC00F1646E /* BikeShareConfigurator.swift */,
 				064F9C3C2062256900F1646E /* BikeSharePresenter.swift */,
 				064F9C4420622DC100F1646E /* BikeShareCityTableViewCell.swift */,
 				064F9C3E2062268F00F1646E /* BikeShareViewController.swift */,
 			);
 			path = BikeListScene;
+			sourceTree = "<group>";
+		};
+		064F9C4B206B8DDB00F1646E /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				064F9C49206B8D4800F1646E /* BikeShareMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		0C0B2E680168A3A1E5207433 /* Pods */ = {
@@ -374,9 +388,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,7 +416,9 @@
 				064F9C372062228000F1646E /* BikeShareCityViewModel.swift in Sources */,
 				064F9C11206220D100F1646E /* AppDelegate.swift in Sources */,
 				064F9C3F2062268F00F1646E /* BikeShareViewController.swift in Sources */,
+				064F9C4A206B8D4800F1646E /* BikeShareMapper.swift in Sources */,
 				064F9C392062235C00F1646E /* BikeShareWorker.swift in Sources */,
+				064F9C4D206B98BC00F1646E /* BikeShareConfigurator.swift in Sources */,
 				064F9C3B2062246D00F1646E /* BikeShareInteractor.swift in Sources */,
 				064F9C312062212100F1646E /* BikeShareCityResponse.swift in Sources */,
 				064F9C4520622DC100F1646E /* BikeShareCityTableViewCell.swift in Sources */,
@@ -554,7 +577,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9534X2WSU;
 				INFOPLIST_FILE = BikeShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -569,7 +594,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9534X2WSU;
 				INFOPLIST_FILE = BikeShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
