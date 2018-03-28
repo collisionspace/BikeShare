@@ -11,8 +11,12 @@ protocol BikeShareUseCase {
 }
 class BikeShareInteractor: BikeShareUseCase {
     var presenter: BikeSharePresenter?
-    var worker: BikeShareWorker = BikeShareWorker()
+    var worker: BikeShareWorker
   
+    init() {
+        worker = BikeShareWorker(bikeShareService: BikeShareRequest())
+    }
+    
     func getBikeShareCities() {
         worker.getBikeShareCities { result in
             switch result {
