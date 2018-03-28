@@ -12,18 +12,16 @@ import AlamofireObjectMapper
 protocol BikeShareService {
     typealias BikeShareServiceCompletionHandler = (Result<BikeShareCityResponse>) -> Void
     
-    func getBikeShareCities(completion: @escaping BikeShareServiceCompletionHandler)
-}
-private enum Constants {
-    static let baseUrl = "https://api.citybik.es/v2/"
-    static let bikeShareEndPoint = "networks"
+    func getBikeShareCities(addressString: String?, completion: @escaping BikeShareServiceCompletionHandler)
 }
 class BikeShareRequest: BikeShareService {
     
-    func getBikeShareCities(completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
-        Alamofire.request(Constants.baseUrl + Constants.bikeShareEndPoint)
-            .responseObject { (response: DataResponse<BikeShareCityResponse>) in
-                completion(response.result)
+    func getBikeShareCities(addressString: String?, completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
+        if let url = addressString {
+            Alamofire.request(url)
+                .responseObject { (response: DataResponse<BikeShareCityResponse>) in
+                    completion(response.result)
+            }
         }
     }
 }

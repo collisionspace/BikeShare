@@ -14,17 +14,20 @@ import ObjectMapper
 
 class BikeShareWorkerTests: XCTestCase {
     private class MockBikeShareService: BikeShareService {
-        func getBikeShareCities(completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
-            let path = Bundle(for: type(of: self)).path(forResource: "BikeShareCitySuccess", ofType: "json")!
-            let data = NSData(contentsOfFile: path)! as Data
+        func getBikeShareCities(addressString: String?, completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
+            if let url = addressString, !url.isEmpty {
+                let path = Bundle(for: type(of: self)).path(forResource: "BikeShareCitySuccess", ofType: "json")!
+                let data = NSData(contentsOfFile: path)! as Data
 
-            let dic = try! JSONSerialization.jsonObject(with: data) as! [String: Any]
+                let dic = try! JSONSerialization.jsonObject(with: data) as! [String: Any]
+        
+                let bikeShareCityResponse = Mapper<BikeShareCityResponse>().map(JSON: dic)
             
-
-            let bikeShareCityResponse = Mapper<BikeShareCityResponse>().map(JSON: dic)
-            
-            
-            completion(Result.success(bikeShareCityResponse!))
+                completion(Result.success(bikeShareCityResponse!))
+            } else {
+                let error = NSError(domain: "", code: 404, userInfo: nil)
+                completion(Result.failure(error))
+            }
         }
     }
     
@@ -44,7 +47,7 @@ class BikeShareWorkerTests: XCTestCase {
     }
     
     func testGetBikeShareCities() {
-        bikeShareWorker.getBikeShareCities { result in
+        bikeShareWorker.getBikeShareCities(addressString: "https://api.citybik.es/v2/networks") { result in
             switch result {
             case .success(let bikeShareCities):
                 let bikeShareCity = bikeShareCities.networks!.first!
@@ -58,6 +61,14 @@ class BikeShareWorkerTests: XCTestCase {
                 assert(location.longitude == 19.044444)
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+        }
+        
+        bikeShareWorker.getBikeShareCities(addressString: "") { result in
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                assert(error.localizedDescription == "The operation couldn’t be completed. ( error 404.)")
             }
         }
     }

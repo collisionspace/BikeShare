@@ -8,10 +8,6 @@
 
 import Alamofire
 
-private enum Constants {
-    static let baseUrl = "https://api.citybik.es/v2/"
-    static let bikeShareEndPoint = "networks"
-}
 class BikeShareWorker: BikeShareService {
     
     private let bikeShareService: BikeShareService
@@ -20,8 +16,8 @@ class BikeShareWorker: BikeShareService {
         self.bikeShareService = bikeShareService
     }
     
-    func getBikeShareCities(completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
-        bikeShareService.getBikeShareCities { (result) in
+    func getBikeShareCities(addressString: String?, completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
+        bikeShareService.getBikeShareCities(addressString: addressString) { (result) in
             completion(result)
         }
     }
