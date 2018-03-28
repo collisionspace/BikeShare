@@ -28,12 +28,14 @@ class BikeShareWorkerTests: XCTestCase {
         }
     }
     
-    private var mockBikeShareService: MockBikeShareService!
+    var bikeShareWorker: BikeShareWorker!
     
     override func setUp() {
         super.setUp()
+        
+        let service = MockBikeShareService()
        
-       mockBikeShareService = MockBikeShareService()
+        bikeShareWorker = BikeShareWorker(bikeShareService: service)
     }
     
     override func tearDown() {
@@ -42,7 +44,7 @@ class BikeShareWorkerTests: XCTestCase {
     }
     
     func testGetBikeShareCities() {
-        mockBikeShareService.getBikeShareCities { result in
+        bikeShareWorker.getBikeShareCities { result in
             switch result {
             case .success(let bikeShareCities):
                 let bikeShareCity = bikeShareCities.networks!.first!
