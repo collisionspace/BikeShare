@@ -9,12 +9,20 @@
 protocol BikeShareUseCase {
     func getBikeShareCities()
 }
+private enum Constants {
+    static let baseUrl = "https://api.citybik.es/v2/"
+    static let bikeShareEndPoint = "networks"
+}
 class BikeShareInteractor: BikeShareUseCase {
     var presenter: BikeSharePresenter?
-    var worker: BikeShareWorker = BikeShareWorker()
+    var worker: BikeShareWorker
   
+    init() {
+        worker = BikeShareWorker(bikeShareService: BikeShareRequest())
+    }
+    
     func getBikeShareCities() {
-        worker.getBikeShareCities { result in
+        worker.getBikeShareCities(addressString: Constants.baseUrl + Constants.bikeShareEndPoint) { result in
             switch result {
             case .success(let bikeShareCities):
                 self.presenter?.presentBikeShareCities(response: bikeShareCities)
