@@ -8,17 +8,19 @@
 
 protocol MapUseCase {
     func getBikeShareCities()
+    func setViewModels(viewModels: [BikeShareCityViewModel])
 }
 protocol MapDataStore {
-    
+    var viewModels: [BikeShareCityViewModel]? { get }
 }
 private enum Constants {
     static let baseUrl = "https://api.citybik.es/v2/"
     static let bikeShareEndPoint = "networks"
 }
-class MapInteractor: MapUseCase {
+class MapInteractor: MapUseCase, MapDataStore {
     var presenter: MapPresenter?
     var worker: MapWorker
+    var viewModels: [BikeShareCityViewModel]?
     
     init() {
         worker = MapWorker(mapService: MapRequest())
@@ -33,5 +35,9 @@ class MapInteractor: MapUseCase {
                 self.presenter?.presentError(error: error)
             }
         }
+    }
+    
+    func setViewModels(viewModels: [BikeShareCityViewModel]) {
+        self.viewModels = viewModels
     }
 }

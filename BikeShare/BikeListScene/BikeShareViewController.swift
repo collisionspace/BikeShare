@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BikeShareDisplay: class {
-    func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?)
+    func displayBikeShareCities(viewModel: [BikeShareCityViewModel])
     func displayError(title: String, message: String, buttonTitle: String)
     func showActivityIndicatorView()
     func hideActivityIndicatorView()
@@ -24,8 +24,8 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
     @IBOutlet weak var bikeShareTableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    var interactor: BikeShareUseCase?
-    var bikeShareCities = [BikeShareCityViewModel]()
+    var interactor: (BikeShareUseCase & BikeShareDataStore)?
+    var router: BikeShareRouter?
     
     // MARK: Oject lifecycle
     
@@ -40,18 +40,11 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
         super.viewDidLoad()
         let nib = UINib.init(nibName: Constants.cellNibName, bundle: nil)
         self.bikeShareTableView.register(nib, forCellReuseIdentifier: Constants.cellReuseIdentifier)
-        getData()
-    }
-    
-    private func getData() {
         interactor?.getBikeShareCities()
     }
     
-    func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?) {
-        if let viewModel = viewModel {
-            bikeShareCities = viewModel
-            bikeShareTableView.reloadData()
-        }
+    func displayBikeShareCities(viewModel: [BikeShareCityViewModel]) {
+        bikeShareTableView.reloadData()
     }
     
     func displayError(title: String, message: String, buttonTitle: String) {
@@ -72,20 +65,25 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
 extension BikeShareViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bikeShareCities.count
+        if let list = interactor?.viewModels {
+            return list.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath) as! BikeShareCityTableViewCell
         let row = indexPath.row
-        let viewModel = bikeShareCities[row]
         
-        cell.bikeShareName.text = viewModel.bikeShareName
-        cell.bikeShareLocation.text = viewModel.cityCountry
-        if let latitude = viewModel.location?.latitude?.description, let longitude = viewModel.location?.longitude?.description {
-            cell.bikeShareLatitude.text = latitude
-            cell.bikeShareLongitude.text = longitude
+        if let viewModel = interactor?.viewModels?[row] {
+            cell.bikeShareName.text = viewModel.bikeShareName
+            cell.bikeShareLocation.text = viewModel.cityCountry
+            if let latitude = viewModel.location?.latitude?.description, let longitude = viewModel.location?.longitude?.description {
+                cell.bikeShareLatitude.text = latitude
+                cell.bikeShareLongitude.text = longitude
+            }
         }
+        
         return cell
     }
 }

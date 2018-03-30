@@ -1,8 +1,8 @@
 //
-//  BikeShareWorkerTests.swift
+//  MapWorkerTests.swift
 //  BikeShareTests
 //
-//  Created by Daniel Slone on 3/28/18.
+//  Created by Daniel Slone on 3/30/18.
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
@@ -11,18 +11,16 @@ import Alamofire
 import ObjectMapper
 
 @testable import BikeShare
-
-class BikeShareWorkerTests: XCTestCase {
-    private class MockBikeShareService: BikeShareService {
-        func getBikeShareCities(addressString: String?, completion: @escaping BikeShareService.BikeShareServiceCompletionHandler) {
+class MapWorkerTests: XCTestCase {
+    private class MockMapService: MapService {
+        func getBikeShareCities(addressString: String?, completion: @escaping MapService.MapServiceCompletionHandler) {
             if let url = addressString, !url.isEmpty {
                 let path = Bundle(for: type(of: self)).path(forResource: "BikeShareCitySuccess", ofType: "json")!
                 let data = NSData(contentsOfFile: path)! as Data
-
+                
                 let dic = try! JSONSerialization.jsonObject(with: data) as! [String: Any]
-        
                 let bikeShareCityResponse = Mapper<BikeShareCityResponse>().map(JSON: dic)
-            
+                
                 completion(Result.success(bikeShareCityResponse!))
             } else {
                 let error = NSError(domain: "", code: 404, userInfo: nil)
@@ -31,14 +29,14 @@ class BikeShareWorkerTests: XCTestCase {
         }
     }
     
-    var bikeShareWorker: BikeShareWorker!
+     var mapWorker: MapWorker!
     
     override func setUp() {
         super.setUp()
-        
-        let service = MockBikeShareService()
-       
-        bikeShareWorker = BikeShareWorker(bikeShareService: service)
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let service = MockMapService()
+
+        mapWorker = MapWorker(mapService: service)
     }
     
     override func tearDown() {
@@ -47,7 +45,7 @@ class BikeShareWorkerTests: XCTestCase {
     }
     
     func testGetBikeShareCities() {
-        bikeShareWorker.getBikeShareCities(addressString: "https://api.citybik.es/v2/networks") { result in
+        mapWorker.getBikeShareCities(addressString: "https://api.citybik.es/v2/networks") { result in
             switch result {
             case .success(let bikeShareCities):
                 let bikeShareCity = bikeShareCities.networks!.first!
@@ -64,7 +62,7 @@ class BikeShareWorkerTests: XCTestCase {
             }
         }
         
-        bikeShareWorker.getBikeShareCities(addressString: "") { result in
+        mapWorker.getBikeShareCities(addressString: "") { result in
             switch result {
             case .success(_): break
             case .failure(let error):
@@ -72,4 +70,5 @@ class BikeShareWorkerTests: XCTestCase {
             }
         }
     }
+  
 }

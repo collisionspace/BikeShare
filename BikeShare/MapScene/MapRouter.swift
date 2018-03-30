@@ -9,11 +9,22 @@
 import UIKit
 protocol MapRouterDelegate {
     func navigateToBikeList()
+    func passDataToBikeList(segue: UIStoryboardSegue)
 }
-class MapRouter: MapRouterDelegate {
+protocol MapDataStorePassing {
+    var dataStore: MapDataStore? { get }
+}
+class MapRouter: MapRouterDelegate, MapDataStorePassing {
     weak var viewController: MapViewController?
-
+    var dataStore: MapDataStore?
+    
     func navigateToBikeList() {
         viewController?.performSegue(withIdentifier: "GoToBikeList", sender: nil)
+    }
+    
+    func passDataToBikeList(segue: UIStoryboardSegue) {
+        let destinationVC =  segue.destination as! BikeShareViewController
+        var destinationDS = destinationVC.router?.dataStore
+        destinationDS?.viewModels = dataStore?.viewModels
     }
 }

@@ -7,25 +7,24 @@
 //
 
 protocol BikeSharePresentationLogic {
-    func presentBikeShareCities(response: BikeShareCityResponse)
-    func presentError(error: Error)
+    func presentBikeShareCities(viewModel: [BikeShareCityViewModel])
+    func presentError()
 }
 private enum Constants {
     static let errorTitle = "Error"
     static let ok = "Ok"
+    static let message = "No data was found for the bike cities"
 }
 class BikeSharePresenter: BikeSharePresentationLogic {
     weak var viewController: BikeShareDisplay?
     
-    func presentBikeShareCities(response: BikeShareCityResponse) {
-        let viewModels = mapDataToViewModels(response: response)
-        
+    func presentBikeShareCities(viewModel: [BikeShareCityViewModel]) {        
         viewController?.hideActivityIndicatorView()
-        viewController?.displayBikeShareCities(viewModel: viewModels)
+        viewController?.displayBikeShareCities(viewModel: viewModel)
     }
     
-    func presentError(error: Error) {
+    func presentError() {
         viewController?.hideActivityIndicatorView()
-        viewController?.displayError(title: Constants.errorTitle, message: error.localizedDescription, buttonTitle: Constants.ok)
+        viewController?.displayError(title: Constants.errorTitle, message: Constants.message, buttonTitle: Constants.ok)
     }
 }

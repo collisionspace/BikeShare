@@ -21,7 +21,7 @@ class MapViewController: UIViewController, MapDisplay {
     @IBOutlet weak var tabBar: UITabBar!
     
     var interactor: MapUseCase?
-    var router: MapRouterDelegate?
+    var router: (MapRouterDelegate & MapDataStorePassing)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,8 +38,13 @@ class MapViewController: UIViewController, MapDisplay {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router?.passDataToBikeList(segue: segue)
+    }
+    
     func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?) {
         if let viewModel = viewModel {
+            interactor?.setViewModels(viewModels: viewModel)
             for index in 0..<viewModel.count {
                 createAnnotation(viewModel: viewModel[index])
             }
