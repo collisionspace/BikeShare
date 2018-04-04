@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BikeShareDisplay: class {
-    func displayBikeShareCities(viewModel: [BikeShareCityViewModel])
+    func displayBikeShareCities()
     func displayError(title: String, message: String, buttonTitle: String)
     func showActivityIndicatorView()
     func hideActivityIndicatorView()
@@ -38,12 +38,22 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    private func setup() {
         let nib = UINib.init(nibName: Constants.cellNibName, bundle: nil)
         self.bikeShareTableView.register(nib, forCellReuseIdentifier: Constants.cellReuseIdentifier)
         interactor?.getBikeShareCities()
+        
+        let searchBar = UISearchBar()
+        let searchBarContainer = SearchBarView(customSearchBar: searchBar)
+        searchBarContainer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
+        navigationItem.titleView = searchBarContainer
+        searchBarContainer.searchBarDelegate = self
     }
     
-    func displayBikeShareCities(viewModel: [BikeShareCityViewModel]) {
+    func displayBikeShareCities() {
         bikeShareTableView.reloadData()
     }
     
@@ -65,26 +75,33 @@ class BikeShareViewController: UIViewController, BikeShareDisplay {
 extension BikeShareViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let list = interactor?.viewModels {
-            return list.count
+        if let isActive = interactor?.isSearchBarActive, isActive, let filtered = interactor?.filterViewModels {
+            return filtered.count
         }
-        return 0
+        guard let list = interactor?.viewModels else { return 0 }
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath) as! BikeShareCityTableViewCell
         let row = indexPath.row
         
-        if let viewModel = interactor?.viewModels?[row] {
-            cell.bikeShareName.text = viewModel.bikeShareName
-            cell.bikeShareLocation.text = viewModel.cityCountry
-            if let latitude = viewModel.location?.latitude?.description, let longitude = viewModel.location?.longitude?.description {
-                cell.bikeShareLatitude.text = latitude
-                cell.bikeShareLongitude.text = longitude
-            }
+        if let isActive = interactor?.isSearchBarActive, isActive, let filtered = interactor?.filterViewModels?[row] {
+            setCell(cell: cell, viewModel: filtered)
+        } else if let viewModel = interactor?.viewModels?[row] {
+            setCell(cell: cell, viewModel: viewModel)
         }
         
         return cell
+    }
+    
+    private func setCell(cell: BikeShareCityTableViewCell, viewModel: BikeShareCityViewModel) {
+        cell.bikeShareName.text = viewModel.bikeShareName
+        cell.bikeShareLocation.text = viewModel.cityCountry
+        if let latitude = viewModel.location?.latitude?.description, let longitude = viewModel.location?.longitude?.description {
+            cell.bikeShareLatitude.text = latitude
+            cell.bikeShareLongitude.text = longitude
+        }
     }
 }
 
@@ -92,5 +109,17 @@ extension BikeShareViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(Constants.defaultRowHeight)
+    }
+}
+
+extension BikeShareViewController: SearchBarDelegate {
+
+    func textDidChange(searchText: String) {
+        interactor?.filterBikeShareCities(searchText: searchText)
+        //bikeShareTableView.reloadData()
+    }
+    
+    func isSearchBar(active: Bool) {
+        interactor?.isSearchBarActive = active
     }
 }

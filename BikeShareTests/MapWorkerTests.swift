@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 
 @testable import BikeShare
+
 class MapWorkerTests: XCTestCase {
     private class MockMapService: MapService {
         func getBikeShareCities(addressString: String?, completion: @escaping MapService.MapServiceCompletionHandler) {
@@ -21,7 +22,7 @@ class MapWorkerTests: XCTestCase {
                 let dic = try! JSONSerialization.jsonObject(with: data) as! [String: Any]
                 let bikeShareCityResponse = Mapper<BikeShareCityResponse>().map(JSON: dic)
                 
-                completion(Result.success(bikeShareCityResponse!))
+                //completion(Result<BikeShareCityResponse>.success(bikeShareCityResponse!))
             } else {
                 let error = NSError(domain: "", code: 404, userInfo: nil)
                 completion(Result.failure(error))
@@ -70,5 +71,4 @@ class MapWorkerTests: XCTestCase {
             }
         }
     }
-  
 }

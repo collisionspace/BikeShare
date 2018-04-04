@@ -34,6 +34,7 @@
 		06FA764E206E081500FC4ACC /* MapWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA764D206E081500FC4ACC /* MapWorkerTests.swift */; };
 		3D53D51532BCFB1439959445 /* Pods_BikeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83AC6E83DA824934800AF4F /* Pods_BikeShare.framework */; };
 		8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */; };
+		8F6E977E207344A20051526D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E977D207344A20051526D /* SearchBarView.swift */; };
 		8F8E6EFD206C6CAB00C24334 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8E6EFC206C6CAB00C24334 /* Map.storyboard */; };
 		8F8E6F00206C6CC600C24334 /* BikeShareMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8E6EFF206C6CC600C24334 /* BikeShareMapView.xib */; };
 		8FC500A5206CA705007BF92C /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC500A4206CA705007BF92C /* MapRouter.swift */; };
@@ -87,6 +88,7 @@
 		1B3D189D609940490235853A /* Pods-BikeShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.release.xcconfig"; sourceTree = "<group>"; };
 		64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeShareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C595C044FB775C08EADC8F3 /* Pods-BikeShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F6E977D207344A20051526D /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		8F8E6EFC206C6CAB00C24334 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		8F8E6EFF206C6CC600C24334 /* BikeShareMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeShareMapView.xib; sourceTree = "<group>"; };
 		8FC500A4206CA705007BF92C /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				064F9C3C2062256900F1646E /* BikeSharePresenter.swift */,
 				064F9C4420622DC100F1646E /* BikeShareCityTableViewCell.swift */,
 				064F9C3E2062268F00F1646E /* BikeShareViewController.swift */,
+				8F6E977D207344A20051526D /* SearchBarView.swift */,
 			);
 			path = BikeListScene;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				8FC5BECF206C798B00BAC377 /* MapService.swift in Sources */,
 				064F9C3F2062268F00F1646E /* BikeShareViewController.swift in Sources */,
 				064F9C4A206B8D4800F1646E /* BikeShareMapper.swift in Sources */,
+				8F6E977E207344A20051526D /* SearchBarView.swift in Sources */,
 				064F9C4D206B98BC00F1646E /* BikeShareConfigurator.swift in Sources */,
 				8FC500A5206CA705007BF92C /* MapRouter.swift in Sources */,
 				8FC5BED3206C7DE300BAC377 /* MapConfigurator.swift in Sources */,
@@ -707,6 +711,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BikeShareTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -724,6 +729,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BikeShareTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

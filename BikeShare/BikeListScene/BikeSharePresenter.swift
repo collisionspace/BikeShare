@@ -7,7 +7,7 @@
 //
 
 protocol BikeSharePresentationLogic {
-    func presentBikeShareCities(viewModel: [BikeShareCityViewModel])
+    func presentBikeShareCities()
     func presentError()
 }
 private enum Constants {
@@ -18,9 +18,9 @@ private enum Constants {
 class BikeSharePresenter: BikeSharePresentationLogic {
     weak var viewController: BikeShareDisplay?
     
-    func presentBikeShareCities(viewModel: [BikeShareCityViewModel]) {        
+    func presentBikeShareCities() {        
         viewController?.hideActivityIndicatorView()
-        viewController?.displayBikeShareCities(viewModel: viewModel)
+        viewController?.displayBikeShareCities()
     }
     
     func presentError() {

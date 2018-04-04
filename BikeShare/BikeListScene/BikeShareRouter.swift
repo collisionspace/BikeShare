@@ -14,6 +14,4 @@ protocol BikeShareRouterDelegate {
 class BikeShareRouter: BikeShareRouterDelegate {
     weak var viewController: BikeShareViewController?
     var dataStore: BikeShareDataStore?
-    
-    
 }
