@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		064F9C11206220D100F1646E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F9C10206220D100F1646E /* AppDelegate.swift */; };
-		064F9C16206220D100F1646E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F9C14206220D100F1646E /* Main.storyboard */; };
+		064F9C16206220D100F1646E /* BikeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F9C14206220D100F1646E /* BikeList.storyboard */; };
 		064F9C18206220D100F1646E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 064F9C17206220D100F1646E /* Assets.xcassets */; };
 		064F9C1B206220D100F1646E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F9C19206220D100F1646E /* LaunchScreen.storyboard */; };
 		064F9C312062212100F1646E /* BikeShareCityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F9C302062212100F1646E /* BikeShareCityResponse.swift */; };
@@ -36,7 +36,6 @@
 		8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */; };
 		8F6E977E207344A20051526D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E977D207344A20051526D /* SearchBarView.swift */; };
 		8F8E6EFD206C6CAB00C24334 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8E6EFC206C6CAB00C24334 /* Map.storyboard */; };
-		8F8E6F00206C6CC600C24334 /* BikeShareMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8E6EFF206C6CC600C24334 /* BikeShareMapView.xib */; };
 		8FC500A5206CA705007BF92C /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC500A4206CA705007BF92C /* MapRouter.swift */; };
 		8FC5BEC7206C73E600BAC377 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5BEC6206C73E600BAC377 /* MapViewController.swift */; };
 		8FC5BEC9206C788200BAC377 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5BEC8206C788200BAC377 /* MapInteractor.swift */; };
@@ -60,7 +59,7 @@
 /* Begin PBXFileReference section */
 		064F9C0D206220D100F1646E /* BikeShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064F9C10206220D100F1646E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		064F9C15206220D100F1646E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		064F9C15206220D100F1646E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BikeList.storyboard; sourceTree = "<group>"; };
 		064F9C17206220D100F1646E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		064F9C1A206220D100F1646E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		064F9C1C206220D100F1646E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,7 +89,6 @@
 		8C595C044FB775C08EADC8F3 /* Pods-BikeShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F6E977D207344A20051526D /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		8F8E6EFC206C6CAB00C24334 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		8F8E6EFF206C6CC600C24334 /* BikeShareMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeShareMapView.xib; sourceTree = "<group>"; };
 		8FC500A4206CA705007BF92C /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		8FC5BEC6206C73E600BAC377 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8FC5BEC8206C788200BAC377 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
@@ -153,8 +151,9 @@
 				064F9C10206220D100F1646E /* AppDelegate.swift */,
 				8FC5BED4206C917A00BAC377 /* LocationServices.swift */,
 				8F8E6EFB206C6C7700C24334 /* MapScene */,
+				064F9C4020622ABC00F1646E /* Models */,
+				064F9C4B206B8DDB00F1646E /* Mapper */,
 				064F9C4120622ACB00F1646E /* BikeListScene */,
-				064F9C14206220D100F1646E /* Main.storyboard */,
 				064F9C17206220D100F1646E /* Assets.xcassets */,
 				064F9C19206220D100F1646E /* LaunchScreen.storyboard */,
 				064F9C1C206220D100F1646E /* Info.plist */,
@@ -186,8 +185,7 @@
 		064F9C4120622ACB00F1646E /* BikeListScene */ = {
 			isa = PBXGroup;
 			children = (
-				064F9C4B206B8DDB00F1646E /* Mapper */,
-				064F9C4020622ABC00F1646E /* Models */,
+				064F9C14206220D100F1646E /* BikeList.storyboard */,
 				064F9C4220622BA900F1646E /* BikeShareCityTableViewCell.xib */,
 				064F9C3A2062246D00F1646E /* BikeShareInteractor.swift */,
 				06817DB5206D0B9F009ED562 /* BikeShareRouter.swift */,
@@ -259,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				8F8E6EFC206C6CAB00C24334 /* Map.storyboard */,
-				8F8E6EFF206C6CC600C24334 /* BikeShareMapView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,9 +352,8 @@
 			files = (
 				064F9C1B206220D100F1646E /* LaunchScreen.storyboard in Resources */,
 				064F9C4320622BA900F1646E /* BikeShareCityTableViewCell.xib in Resources */,
-				8F8E6F00206C6CC600C24334 /* BikeShareMapView.xib in Resources */,
 				064F9C18206220D100F1646E /* Assets.xcassets in Resources */,
-				064F9C16206220D100F1646E /* Main.storyboard in Resources */,
+				064F9C16206220D100F1646E /* BikeList.storyboard in Resources */,
 				8F8E6EFD206C6CAB00C24334 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,12 +539,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		064F9C14206220D100F1646E /* Main.storyboard */ = {
+		064F9C14206220D100F1646E /* BikeList.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				064F9C15206220D100F1646E /* Base */,
 			);
-			name = Main.storyboard;
+			name = BikeList.storyboard;
 			sourceTree = "<group>";
 		};
 		064F9C19206220D100F1646E /* LaunchScreen.storyboard */ = {
