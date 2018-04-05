@@ -27,7 +27,6 @@ class LocationServices: NSObject {
     
     weak var delegate: LocationChangeDelegate?
     weak var locationServicesEnabledDelegate:LocationServicesEnabledDelegate?
-    var location:CLLocation?
     
     private override init() {
         super.init()
@@ -66,7 +65,6 @@ extension LocationServices: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            self.location = location
             delegate?.locationChange(location: location)
         }
     }
