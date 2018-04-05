@@ -31,7 +31,10 @@ class BikeShareInteractor: BikeShareUseCase, BikeShareDataStore {
     
     func filterBikeShareCities(searchText: String) {
         if let isActive = isSearchBarActive, isActive, let viewModels = viewModels {
-            filterViewModels = viewModels.filter { $0.bikeShareName?.range(of: searchText, options: .caseInsensitive) != nil }
+            filterViewModels = viewModels.filter {
+                $0.bikeShareName?.range(of: searchText, options: .caseInsensitive) != nil ||
+                $0.cityCountry?.range(of: searchText, options: .caseInsensitive) != nil
+            }
             
             //presents filtered array if count is bigger than 0
             //or search text isn't empty

@@ -116,7 +116,6 @@ extension BikeShareViewController: SearchBarDelegate {
 
     func textDidChange(searchText: String) {
         interactor?.filterBikeShareCities(searchText: searchText)
-        //bikeShareTableView.reloadData()
     }
     
     func isSearchBar(active: Bool) {
