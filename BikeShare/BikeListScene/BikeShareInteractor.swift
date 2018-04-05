@@ -8,26 +8,41 @@
 
 protocol BikeShareUseCase {
     func getBikeShareCities()
+    func filterBikeShareCities(searchText: String)
 }
-private enum Constants {
-    static let baseUrl = "https://api.citybik.es/v2/"
-    static let bikeShareEndPoint = "networks"
+protocol BikeShareDataStore: class {
+    var viewModels: [BikeShareCityViewModel]? { get set }
+    var filterViewModels: [BikeShareCityViewModel]? { get set }
+    var isSearchBarActive: Bool? { get set }
 }
-class BikeShareInteractor: BikeShareUseCase {
+class BikeShareInteractor: BikeShareUseCase, BikeShareDataStore {
     var presenter: BikeSharePresenter?
-    var worker: BikeShareWorker
-  
-    init() {
-        worker = BikeShareWorker(bikeShareService: BikeShareRequest())
-    }
+    var viewModels: [BikeShareCityViewModel]?
+    var filterViewModels: [BikeShareCityViewModel]?
+    var isSearchBarActive: Bool?
     
     func getBikeShareCities() {
-        worker.getBikeShareCities(addressString: Constants.baseUrl + Constants.bikeShareEndPoint) { result in
-            switch result {
-            case .success(let bikeShareCities):
-                self.presenter?.presentBikeShareCities(response: bikeShareCities)
-            case .failure(let error):
-                self.presenter?.presentError(error: error)
+        if viewModels != nil {
+            presenter?.presentBikeShareCities()
+        } else {
+            presenter?.presentError()
+        }
+    }
+    
+    func filterBikeShareCities(searchText: String) {
+        if let isActive = isSearchBarActive, isActive, let viewModels = viewModels {
+            filterViewModels = viewModels.filter {
+                $0.bikeShareName?.range(of: searchText, options: .caseInsensitive) != nil ||
+                $0.cityCountry?.range(of: searchText, options: .caseInsensitive) != nil
+            }
+            
+            //presents filtered array if count is bigger than 0
+            //or search text isn't empty
+            if let filteredCount = filterViewModels?.count, filteredCount > 0 || !searchText.isEmpty {
+                presenter?.presentBikeShareCities()
+            } else {
+                filterViewModels = viewModels
+                presenter?.presentBikeShareCities()
             }
         }
     }

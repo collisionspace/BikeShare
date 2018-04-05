@@ -7,8 +7,8 @@ target 'BikeShare' do
 
   # Pods for BikeShare
   pod 'Alamofire', '~> 4.7'
-  pod 'GoogleMaps'
   pod 'AlamofireObjectMapper', '~> 5.0'
+  pod 'Mapbox-iOS-SDK', '~> 3.7'
   
   target 'BikeShareTests' do
     inherit! :search_paths

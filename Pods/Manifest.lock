@@ -1,26 +1,22 @@
 PODS:
-  - Alamofire (4.7.0)
+  - Alamofire (4.7.1)
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
-  - GoogleMaps (2.6.0):
-    - GoogleMaps/Maps (= 2.6.0)
-  - GoogleMaps/Base (2.6.0)
-  - GoogleMaps/Maps (2.6.0):
-    - GoogleMaps/Base
+  - Mapbox-iOS-SDK (3.7.6)
   - ObjectMapper (3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.0)
-  - GoogleMaps
+  - Mapbox-iOS-SDK (~> 3.7)
 
 SPEC CHECKSUMS:
-  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
-  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  Mapbox-iOS-SDK: 23ececda1d90c3b436b45e2c88e9677f025303c0
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
 
-PODFILE CHECKSUM: 71e9569cc67674e3903e4e145270ccd0af02e96c
+PODFILE CHECKSUM: fb37d482c0aee5d6f2d710d5fb8ac99caaf2ccc3
 
 COCOAPODS: 1.4.0
