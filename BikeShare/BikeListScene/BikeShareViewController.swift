@@ -95,7 +95,7 @@ extension BikeShareViewController: UITableViewDataSource {
         return cell
     }
     
-    private func setCell(cell: BikeShareCityTableViewCell, viewModel: BikeShareCityViewModel) {
+    private func setCell(cell: BikeShareCityTableViewCell, viewModel: BikeListViewModel) {
         cell.bikeShareName.text = viewModel.bikeShareName
         cell.bikeShareLocation.text = viewModel.cityCountry
         if let latitude = viewModel.location?.latitude?.description, let longitude = viewModel.location?.longitude?.description {

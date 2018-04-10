@@ -11,14 +11,14 @@ protocol BikeShareUseCase {
     func filterBikeShareCities(searchText: String)
 }
 protocol BikeShareDataStore: class {
-    var viewModels: [BikeShareCityViewModel]? { get set }
-    var filterViewModels: [BikeShareCityViewModel]? { get set }
+    var viewModels: [BikeListViewModel]? { get set }
+    var filterViewModels: [BikeListViewModel]? { get set }
     var isSearchBarActive: Bool? { get set }
 }
 class BikeShareInteractor: BikeShareUseCase, BikeShareDataStore {
     var presenter: BikeSharePresenter?
-    var viewModels: [BikeShareCityViewModel]?
-    var filterViewModels: [BikeShareCityViewModel]?
+    var viewModels: [BikeListViewModel]?
+    var filterViewModels: [BikeListViewModel]?
     var isSearchBarActive: Bool?
     
     func getBikeShareCities() {
