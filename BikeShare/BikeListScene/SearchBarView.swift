@@ -16,7 +16,6 @@ class SearchBarView: UIView, UISearchBarDelegate {
     
     let searchBar: UISearchBar
     var searchBarDelegate: SearchBarDelegate?
-    //var onTextChange: ((SearchBar) -> Void)?
     
     init(customSearchBar: UISearchBar) {
         searchBar = customSearchBar

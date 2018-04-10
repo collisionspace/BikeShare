@@ -23,8 +23,10 @@ class MapRouter: MapRouterDelegate, MapDataStorePassing {
     }
     
     func passDataToBikeList(segue: UIStoryboardSegue) {
-        let destinationVC =  segue.destination as! BikeShareViewController
-        var destinationDS = destinationVC.router?.dataStore
-        destinationDS?.viewModels = dataStore?.viewModels
+        let destinationViewController =  segue.destination as! BikeShareViewController
+        let destinationDataStore = destinationViewController.router?.dataStore
+        if let viewModels = dataStore?.viewModels {
+            destinationDataStore?.viewModels = mapToBikeListViewModel(bikeShareViewModels: viewModels)
+        }
     }
 }
