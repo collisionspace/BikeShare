@@ -36,6 +36,21 @@
 		06FA764B206E066A00FC4ACC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA764C206E066A00FC4ACC /* Alamofire.framework */; };
 		06FA764E206E081500FC4ACC /* MapWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA764D206E081500FC4ACC /* MapWorkerTests.swift */; };
 		3D53D51532BCFB1439959445 /* Pods_BikeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83AC6E83DA824934800AF4F /* Pods_BikeShare.framework */; };
+		65384B5F207DAA6900887571 /* BikeStationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384B5E207DAA6900887571 /* BikeStationResponse.swift */; };
+		65384B62207DAB5A00887571 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384B61207DAB5A00887571 /* City.swift */; };
+		65384B64207DAB8A00887571 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384B63207DAB8A00887571 /* Station.swift */; };
+		65384B66207DAC3500887571 /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384B65207DAC3500887571 /* Extra.swift */; };
+		65384B68207DAF2F00887571 /* BikeShareWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384B67207DAF2F00887571 /* BikeShareWorker.swift */; };
+		65384B6A207DAF5100887571 /* BikeShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384B69207DAF5100887571 /* BikeShareService.swift */; };
+		657A5BE8208465AC00505DC7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657A5BE6208465AC00505DC7 /* Interface.storyboard */; };
+		657A5BEA208465AE00505DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A5BE9208465AE00505DC7 /* Assets.xcassets */; };
+		657A5BF1208465AE00505DC7 /* BikeShareWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 657A5BF0208465AE00505DC7 /* BikeShareWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		657A5BF6208465AE00505DC7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A5BF5208465AE00505DC7 /* InterfaceController.swift */; };
+		657A5BF8208465AE00505DC7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A5BF7208465AE00505DC7 /* ExtensionDelegate.swift */; };
+		657A5BFA208465AE00505DC7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A5BF9208465AE00505DC7 /* NotificationController.swift */; };
+		657A5BFC208465AF00505DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A5BFB208465AF00505DC7 /* Assets.xcassets */; };
+		657A5C01208465AF00505DC7 /* BikeShareWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 657A5BE4208465AC00505DC7 /* BikeShareWatch.app */; };
+		657A5C0B20858F7E00505DC7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5BED4206C917A00BAC377 /* LocationServices.swift */; };
 		8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */; };
 		8F6E977E207344A20051526D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E977D207344A20051526D /* SearchBarView.swift */; };
 		8F8E6EFD206C6CAB00C24334 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8E6EFC206C6CAB00C24334 /* Map.storyboard */; };
@@ -57,7 +72,46 @@
 			remoteGlobalIDString = 064F9C0C206220D100F1646E;
 			remoteInfo = BikeShare;
 		};
+		657A5BF2208465AE00505DC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 064F9C05206220D100F1646E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 657A5BEF208465AE00505DC7;
+			remoteInfo = "BikeShareWatch Extension";
+		};
+		657A5BFF208465AF00505DC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 064F9C05206220D100F1646E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 657A5BE3208465AC00505DC7;
+			remoteInfo = BikeShareWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		657A5C07208465AF00505DC7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				657A5BF1208465AE00505DC7 /* BikeShareWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		657A5C09208465AF00505DC7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				657A5C01208465AF00505DC7 /* BikeShareWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		064F9C0D206220D100F1646E /* BikeShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +146,23 @@
 		18A059B2BE66AA88E367D616 /* Pods-BikeShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShare/Pods-BikeShare.debug.xcconfig"; sourceTree = "<group>"; };
 		1B3D189D609940490235853A /* Pods-BikeShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.release.xcconfig"; sourceTree = "<group>"; };
 		64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeShareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65384B5E207DAA6900887571 /* BikeStationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationResponse.swift; sourceTree = "<group>"; };
+		65384B61207DAB5A00887571 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		65384B63207DAB8A00887571 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		65384B65207DAC3500887571 /* Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extra.swift; sourceTree = "<group>"; };
+		65384B67207DAF2F00887571 /* BikeShareWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareWorker.swift; sourceTree = "<group>"; };
+		65384B69207DAF5100887571 /* BikeShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareService.swift; sourceTree = "<group>"; };
+		657A5BE4208465AC00505DC7 /* BikeShareWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeShareWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		657A5BE7208465AC00505DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		657A5BE9208465AE00505DC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		657A5BEB208465AE00505DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		657A5BF0208465AE00505DC7 /* BikeShareWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BikeShareWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		657A5BF5208465AE00505DC7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		657A5BF7208465AE00505DC7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		657A5BF9208465AE00505DC7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		657A5BFB208465AF00505DC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		657A5BFD208465AF00505DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		657A5BFE208465AF00505DC7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		8C595C044FB775C08EADC8F3 /* Pods-BikeShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F6E977D207344A20051526D /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		8F8E6EFC206C6CAB00C24334 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -128,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		657A5BED208465AE00505DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -136,6 +214,8 @@
 			children = (
 				064F9C0F206220D100F1646E /* BikeShare */,
 				064F9C24206220D100F1646E /* BikeShareTests */,
+				657A5BE5208465AC00505DC7 /* BikeShareWatch */,
+				657A5BF4208465AE00505DC7 /* BikeShareWatch Extension */,
 				064F9C0E206220D100F1646E /* Products */,
 				0C0B2E680168A3A1E5207433 /* Pods */,
 				1132452571065D0B9DE27DD7 /* Frameworks */,
@@ -147,6 +227,8 @@
 			children = (
 				064F9C0D206220D100F1646E /* BikeShare.app */,
 				064F9C21206220D100F1646E /* BikeShareTests.xctest */,
+				657A5BE4208465AC00505DC7 /* BikeShareWatch.app */,
+				657A5BF0208465AE00505DC7 /* BikeShareWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +279,9 @@
 				064F9C3C2062256900F1646E /* BikeSharePresenter.swift */,
 				064F9C4420622DC100F1646E /* BikeShareCityTableViewCell.swift */,
 				064F9C3E2062268F00F1646E /* BikeShareViewController.swift */,
+				65384B67207DAF2F00887571 /* BikeShareWorker.swift */,
 				8F6E977D207344A20051526D /* SearchBarView.swift */,
+				65384B69207DAF5100887571 /* BikeShareService.swift */,
 			);
 			path = BikeListScene;
 			sourceTree = "<group>";
@@ -224,6 +308,7 @@
 			children = (
 				06C353C5207C97B5008CC180 /* BikeListViewModel.swift */,
 				06C353C7207C97E4008CC180 /* BikeShareLocation.swift */,
+				65384B60207DAB3100887571 /* StationResponseModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +344,40 @@
 				64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65384B60207DAB3100887571 /* StationResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				65384B5E207DAA6900887571 /* BikeStationResponse.swift */,
+				65384B63207DAB8A00887571 /* Station.swift */,
+				65384B61207DAB5A00887571 /* City.swift */,
+				65384B65207DAC3500887571 /* Extra.swift */,
+			);
+			path = StationResponseModels;
+			sourceTree = "<group>";
+		};
+		657A5BE5208465AC00505DC7 /* BikeShareWatch */ = {
+			isa = PBXGroup;
+			children = (
+				657A5BE6208465AC00505DC7 /* Interface.storyboard */,
+				657A5BE9208465AE00505DC7 /* Assets.xcassets */,
+				657A5BEB208465AE00505DC7 /* Info.plist */,
+			);
+			path = BikeShareWatch;
+			sourceTree = "<group>";
+		};
+		657A5BF4208465AE00505DC7 /* BikeShareWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				657A5BF5208465AE00505DC7 /* InterfaceController.swift */,
+				657A5BF7208465AE00505DC7 /* ExtensionDelegate.swift */,
+				657A5BF9208465AE00505DC7 /* NotificationController.swift */,
+				657A5BFB208465AF00505DC7 /* Assets.xcassets */,
+				657A5BFD208465AF00505DC7 /* Info.plist */,
+				657A5BFE208465AF00505DC7 /* PushNotificationPayload.apns */,
+			);
+			path = "BikeShareWatch Extension";
 			sourceTree = "<group>";
 		};
 		8F8E6EFB206C6C7700C24334 /* MapScene */ = {
@@ -299,10 +418,12 @@
 				064F9C0B206220D100F1646E /* Resources */,
 				0D154C2CB0BF0CDFFE448FDD /* [CP] Embed Pods Frameworks */,
 				76F0D3076F2CEE0DBB1A11AE /* [CP] Copy Pods Resources */,
+				657A5C09208465AF00505DC7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				657A5C00208465AF00505DC7 /* PBXTargetDependency */,
 			);
 			name = BikeShare;
 			productName = BikeShare;
@@ -330,13 +451,47 @@
 			productReference = 064F9C21206220D100F1646E /* BikeShareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		657A5BE3208465AC00505DC7 /* BikeShareWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 657A5C08208465AF00505DC7 /* Build configuration list for PBXNativeTarget "BikeShareWatch" */;
+			buildPhases = (
+				657A5BE2208465AC00505DC7 /* Resources */,
+				657A5C07208465AF00505DC7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				657A5BF3208465AE00505DC7 /* PBXTargetDependency */,
+			);
+			name = BikeShareWatch;
+			productName = BikeShareWatch;
+			productReference = 657A5BE4208465AC00505DC7 /* BikeShareWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		657A5BEF208465AE00505DC7 /* BikeShareWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 657A5C06208465AF00505DC7 /* Build configuration list for PBXNativeTarget "BikeShareWatch Extension" */;
+			buildPhases = (
+				657A5BEC208465AE00505DC7 /* Sources */,
+				657A5BED208465AE00505DC7 /* Frameworks */,
+				657A5BEE208465AE00505DC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BikeShareWatch Extension";
+			productName = "BikeShareWatch Extension";
+			productReference = 657A5BF0208465AE00505DC7 /* BikeShareWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		064F9C05206220D100F1646E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Daniel Slone";
 				TargetAttributes = {
@@ -348,6 +503,14 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 064F9C0C206220D100F1646E;
+					};
+					657A5BE3208465AC00505DC7 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+					657A5BEF208465AE00505DC7 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -366,6 +529,8 @@
 			targets = (
 				064F9C0C206220D100F1646E /* BikeShare */,
 				064F9C20206220D100F1646E /* BikeShareTests */,
+				657A5BE3208465AC00505DC7 /* BikeShareWatch */,
+				657A5BEF208465AE00505DC7 /* BikeShareWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -388,6 +553,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				06817DAC206BB7F6009ED562 /* BikeShareCitySuccess.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		657A5BE2208465AC00505DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				657A5BEA208465AE00505DC7 /* Assets.xcassets in Resources */,
+				657A5BE8208465AC00505DC7 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		657A5BEE208465AE00505DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				657A5BFC208465AF00505DC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,16 +700,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65384B6A207DAF5100887571 /* BikeShareService.swift in Sources */,
 				064F9C3D2062256900F1646E /* BikeSharePresenter.swift in Sources */,
 				064F9C332062216D00F1646E /* BikeShareCity.swift in Sources */,
 				8FC5BECB206C792900BAC377 /* MapWorker.swift in Sources */,
 				064F9C372062228000F1646E /* BikeShareCityViewModel.swift in Sources */,
 				8FC5BEC9206C788200BAC377 /* MapInteractor.swift in Sources */,
 				06817DB6206D0B9F009ED562 /* BikeShareRouter.swift in Sources */,
+				65384B68207DAF2F00887571 /* BikeShareWorker.swift in Sources */,
 				064F9C11206220D100F1646E /* AppDelegate.swift in Sources */,
 				8FC5BECF206C798B00BAC377 /* MapService.swift in Sources */,
 				064F9C3F2062268F00F1646E /* BikeShareViewController.swift in Sources */,
 				06C353C8207C97E4008CC180 /* BikeShareLocation.swift in Sources */,
+				65384B5F207DAA6900887571 /* BikeStationResponse.swift in Sources */,
 				064F9C4A206B8D4800F1646E /* BikeShareMapper.swift in Sources */,
 				8F6E977E207344A20051526D /* SearchBarView.swift in Sources */,
 				064F9C4D206B98BC00F1646E /* BikeShareConfigurator.swift in Sources */,
@@ -536,11 +721,14 @@
 				8FC5BED3206C7DE300BAC377 /* MapConfigurator.swift in Sources */,
 				8FC5BED5206C917A00BAC377 /* LocationServices.swift in Sources */,
 				8FC5BED1206C7A8500BAC377 /* MapPresenter.swift in Sources */,
+				65384B64207DAB8A00887571 /* Station.swift in Sources */,
 				064F9C3B2062246D00F1646E /* BikeShareInteractor.swift in Sources */,
 				06C353C3207C973E008CC180 /* MapToBikeListViewModel.swift in Sources */,
 				064F9C312062212100F1646E /* BikeShareCityResponse.swift in Sources */,
 				064F9C4520622DC100F1646E /* BikeShareCityTableViewCell.swift in Sources */,
 				064F9C35206221FD00F1646E /* CityLocation.swift in Sources */,
+				65384B62207DAB5A00887571 /* City.swift in Sources */,
+				65384B66207DAC3500887571 /* Extra.swift in Sources */,
 				8FC5BEC7206C73E600BAC377 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +744,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		657A5BEC208465AE00505DC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				657A5BFA208465AE00505DC7 /* NotificationController.swift in Sources */,
+				657A5BF8208465AE00505DC7 /* ExtensionDelegate.swift in Sources */,
+				657A5C0B20858F7E00505DC7 /* LocationServices.swift in Sources */,
+				657A5BF6208465AE00505DC7 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -563,6 +762,16 @@
 			isa = PBXTargetDependency;
 			target = 064F9C0C206220D100F1646E /* BikeShare */;
 			targetProxy = 064F9C22206220D100F1646E /* PBXContainerItemProxy */;
+		};
+		657A5BF3208465AE00505DC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 657A5BEF208465AE00505DC7 /* BikeShareWatch Extension */;
+			targetProxy = 657A5BF2208465AE00505DC7 /* PBXContainerItemProxy */;
+		};
+		657A5C00208465AF00505DC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 657A5BE3208465AC00505DC7 /* BikeShareWatch */;
+			targetProxy = 657A5BFF208465AF00505DC7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,6 +790,14 @@
 				064F9C1A206220D100F1646E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		657A5BE6208465AC00505DC7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				657A5BE7208465AC00505DC7 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -763,6 +980,90 @@
 			};
 			name = Release;
 		};
+		657A5C02208465AF00505DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9534X2WSU;
+				IBSC_MODULE = BikeShareWatch_Extension;
+				INFOPLIST_FILE = BikeShareWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShare.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		657A5C03208465AF00505DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9534X2WSU;
+				IBSC_MODULE = BikeShareWatch_Extension;
+				INFOPLIST_FILE = BikeShareWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShare.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		657A5C04208465AF00505DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BikeShareWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShare.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		657A5C05208465AF00505DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BikeShareWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dan.BikeShare.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -789,6 +1090,24 @@
 			buildConfigurations = (
 				064F9C2E206220D100F1646E /* Debug */,
 				064F9C2F206220D100F1646E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		657A5C06208465AF00505DC7 /* Build configuration list for PBXNativeTarget "BikeShareWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				657A5C04208465AF00505DC7 /* Debug */,
+				657A5C05208465AF00505DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		657A5C08208465AF00505DC7 /* Build configuration list for PBXNativeTarget "BikeShareWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				657A5C02208465AF00505DC7 /* Debug */,
+				657A5C03208465AF00505DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

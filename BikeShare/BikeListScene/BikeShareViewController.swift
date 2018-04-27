@@ -110,6 +110,10 @@ extension BikeShareViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(Constants.defaultRowHeight)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor?.getStations(index: indexPath.row)
+    }
 }
 
 extension BikeShareViewController: SearchBarDelegate {
