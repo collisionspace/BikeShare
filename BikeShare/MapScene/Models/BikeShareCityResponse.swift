@@ -6,16 +6,10 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import ObjectMapper
-
-class BikeShareCityResponse: Mappable {
+class BikeShareCityResponse: Codable {
     var networks: [BikeShareCity]?
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        networks <- map["networks"]
+
+    enum CodingKeys: String, CodingKey {
+        case networks
     }
 }
