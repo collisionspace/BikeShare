@@ -6,22 +6,16 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import ObjectMapper
-
-class CityLocation: Mappable {
+struct CityLocation: Codable {
     var city: String?
     var country: String?
     var latitude: Double?
     var longitude: Double?
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        city <- map["city"]
-        country <- map["country"]
-        latitude <- map["latitude"]
-        longitude <- map["longitude"]
+
+    enum CodingKeys: String, CodingKey {
+        case city
+        case country
+        case latitude
+        case longitude
     }
 }

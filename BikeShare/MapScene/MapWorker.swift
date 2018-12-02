@@ -6,8 +6,6 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import Alamofire
-
 class MapWorker: MapService {
     
     private let mapService: MapService
@@ -16,7 +14,7 @@ class MapWorker: MapService {
         self.mapService = mapService
     }
     
-    func getBikeShareCities(addressString: String?, completion: @escaping MapService.MapServiceCompletionHandler) {
+    func getBikeShareCities(addressString: String?, completion: @escaping (MapServiceResponseHandler) -> ()) {
         mapService.getBikeShareCities(addressString: addressString) { (result) in
             completion(result)
         }

@@ -6,21 +6,21 @@
 //  Copyright © 2018 Daniel Slone. All rights reserved.
 //
 
-import Alamofire
-import AlamofireObjectMapper
+import Foundation
 
 protocol MapService {
-    typealias MapServiceCompletionHandler = (Result<BikeShareCityResponse>) -> Void
+    typealias MapServiceResponseHandler = ApiResponse<BikeShareCityResponse, Error>
     
-    func getBikeShareCities(addressString: String?, completion: @escaping MapServiceCompletionHandler)
+    func getBikeShareCities(addressString: String?, completion: @escaping  (ApiResponse<BikeShareCityResponse, Error>) -> Void)
 }
 class MapRequest: MapService {
-    
-    func getBikeShareCities(addressString: String?, completion: @escaping MapService.MapServiceCompletionHandler) {
+
+    private let baseRequest = BaseRequest()
+
+    func getBikeShareCities(addressString: String?, completion: @escaping (ApiResponse<BikeShareCityResponse, Error>) -> Void) {
         if let url = addressString {
-            Alamofire.request(url)
-                .responseObject { (response: DataResponse<BikeShareCityResponse>) in
-                    completion(response.result)
+            baseRequest.request(url: url, method: .GET, parameters: nil, headers: nil) { (response: MapServiceResponseHandler) -> () in
+                completion(response)
             }
         }
     }

@@ -31,7 +31,7 @@ class MapInteractor: MapUseCase, MapDataStore {
             switch result {
             case .success(let bikeShareCities):
                 self.presenter?.presentBikeShareCities(response: bikeShareCities)
-            case .failure(let error):
+            case .failed(let error):
                 self.presenter?.presentError(error: error)
             }
         }

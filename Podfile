@@ -6,8 +6,6 @@ target 'BikeShare' do
   use_frameworks!
 
   # Pods for BikeShare
-  pod 'Alamofire', '~> 4.7'
-  pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'Mapbox-iOS-SDK', '~> 3.7'
   
   target 'BikeShareTests' do

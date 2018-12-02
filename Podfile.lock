@@ -1,22 +1,16 @@
 PODS:
-  - Alamofire (4.7.1)
-  - AlamofireObjectMapper (5.0.0):
-    - Alamofire (~> 4.1)
-    - ObjectMapper (~> 3.0)
   - Mapbox-iOS-SDK (3.7.6)
-  - ObjectMapper (3.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
-  - AlamofireObjectMapper (~> 5.0)
   - Mapbox-iOS-SDK (~> 3.7)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Mapbox-iOS-SDK
+
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
-  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   Mapbox-iOS-SDK: 23ececda1d90c3b436b45e2c88e9677f025303c0
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
 
-PODFILE CHECKSUM: fb37d482c0aee5d6f2d710d5fb8ac99caaf2ccc3
+PODFILE CHECKSUM: 7de7029cbadf9efb3565719931d3827cfb93e4f0
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
