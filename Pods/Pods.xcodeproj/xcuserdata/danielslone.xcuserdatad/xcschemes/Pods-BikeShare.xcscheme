@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C41732BC2F160F78F15D694593A847A9"
+               BlueprintIdentifier = "420127EA443B5C42E2B47AE63DCE7973"
                BuildableName = "Pods_BikeShare.framework"
                BlueprintName = "Pods-BikeShare"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C41732BC2F160F78F15D694593A847A9"
+            BlueprintIdentifier = "420127EA443B5C42E2B47AE63DCE7973"
             BuildableName = "Pods_BikeShare.framework"
             BlueprintName = "Pods-BikeShare"
             ReferencedContainer = "container:Pods.xcodeproj">

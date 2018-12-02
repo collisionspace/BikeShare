@@ -17,11 +17,8 @@ class BikeShareConfigurator {
     func configure(viewController: BikeShareViewController) {
         let interactor = BikeShareInteractor()
         let presenter = BikeSharePresenter()
-        let router = BikeShareRouter()
         viewController.interactor = interactor
-        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
-        router.dataStore = interactor
     }
 }

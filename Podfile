@@ -6,7 +6,9 @@ target 'BikeShare' do
   use_frameworks!
 
   # Pods for BikeShare
-  pod 'Mapbox-iOS-SDK', '~> 3.7'
+  pod 'Alamofire', '~> 4.7'
+  pod 'GoogleMaps'
+  pod 'AlamofireObjectMapper', '~> 5.0'
   
   target 'BikeShareTests' do
     inherit! :search_paths
