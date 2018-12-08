@@ -8,8 +8,8 @@
 
 import Foundation
 
-func mapDataToViewModels(response: BikeShareCityResponse) -> [BikeShareCityViewModel]? {
-    let viewModels = response.networks?.map {
+func mapDataToViewModels(response: [BikeShareCity]) -> [BikeShareCityViewModel] {
+    let viewModels = response.map {
         (bikeShareCity: BikeShareCity) -> BikeShareCityViewModel in
         BikeShareCityViewModel(href: bikeShareCity.href, bikeShareName: bikeShareCity.name, location: bikeShareCity.location)
     }

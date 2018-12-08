@@ -31,8 +31,16 @@
 		06C353C6207C97B5008CC180 /* BikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C353C5207C97B5008CC180 /* BikeListViewModel.swift */; };
 		06C353C8207C97E4008CC180 /* BikeShareLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C353C7207C97E4008CC180 /* BikeShareLocation.swift */; };
 		06D7C11921B3D7DA0018AB63 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C11821B3D7DA0018AB63 /* BaseRequest.swift */; };
-		06FA764B206E066A00FC4ACC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA764C206E066A00FC4ACC /* Alamofire.framework */; };
-		06FA764E206E081500FC4ACC /* MapWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA764D206E081500FC4ACC /* MapWorkerTests.swift */; };
+		06D7C11F21B40C880018AB63 /* RegionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C11D21B40C880018AB63 /* RegionCollectionViewCell.swift */; };
+		06D7C12021B40C880018AB63 /* RegionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D7C11E21B40C880018AB63 /* RegionCollectionViewCell.xib */; };
+		06D7C12221B46AA20018AB63 /* RegionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C12121B46AA20018AB63 /* RegionCollectionView.swift */; };
+		06D7C12821BB947E0018AB63 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C12721BB947E0018AB63 /* Regions.swift */; };
+		06D7C12A21BB95EB0018AB63 /* region_abbreviations.json in Resources */ = {isa = PBXBuildFile; fileRef = 06D7C12921BB95EB0018AB63 /* region_abbreviations.json */; };
+		06D7C12D21BB96180018AB63 /* RegionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C12C21BB96180018AB63 /* RegionService.swift */; };
+		06D7C13221BBDADD0018AB63 /* MapWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C13121BBDADD0018AB63 /* MapWorkerTests.swift */; };
+		06D7C13321BBDB530018AB63 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C11821B3D7DA0018AB63 /* BaseRequest.swift */; };
+		06D7C13421BBDB580018AB63 /* MapWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5BECA206C792900BAC377 /* MapWorker.swift */; };
+		06D7C13521BBDB5B0018AB63 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5BECE206C798B00BAC377 /* MapService.swift */; };
 		3D53D51532BCFB1439959445 /* Pods_BikeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83AC6E83DA824934800AF4F /* Pods_BikeShare.framework */; };
 		8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */; };
 		8F6E977E207344A20051526D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E977D207344A20051526D /* SearchBarView.swift */; };
@@ -86,8 +94,14 @@
 		06C353C5207C97B5008CC180 /* BikeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListViewModel.swift; sourceTree = "<group>"; };
 		06C353C7207C97E4008CC180 /* BikeShareLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareLocation.swift; sourceTree = "<group>"; };
 		06D7C11821B3D7DA0018AB63 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		06D7C11D21B40C880018AB63 /* RegionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCollectionViewCell.swift; sourceTree = "<group>"; };
+		06D7C11E21B40C880018AB63 /* RegionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegionCollectionViewCell.xib; sourceTree = "<group>"; };
+		06D7C12121B46AA20018AB63 /* RegionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCollectionView.swift; sourceTree = "<group>"; };
+		06D7C12721BB947E0018AB63 /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		06D7C12921BB95EB0018AB63 /* region_abbreviations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = region_abbreviations.json; sourceTree = "<group>"; };
+		06D7C12C21BB96180018AB63 /* RegionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionService.swift; sourceTree = "<group>"; };
+		06D7C13121BBDADD0018AB63 /* MapWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorkerTests.swift; sourceTree = "<group>"; };
 		06FA764C206E066A00FC4ACC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06FA764D206E081500FC4ACC /* MapWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorkerTests.swift; sourceTree = "<group>"; };
 		18A059B2BE66AA88E367D616 /* Pods-BikeShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShare/Pods-BikeShare.debug.xcconfig"; sourceTree = "<group>"; };
 		1B3D189D609940490235853A /* Pods-BikeShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeShareTests/Pods-BikeShareTests.release.xcconfig"; sourceTree = "<group>"; };
 		64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeShareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +133,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06FA764B206E066A00FC4ACC /* Alamofire.framework in Frameworks */,
 				8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +165,7 @@
 			children = (
 				064F9C10206220D100F1646E /* AppDelegate.swift */,
 				8FC5BED4206C917A00BAC377 /* LocationServices.swift */,
+				06D7C12E21BBCB7F0018AB63 /* Regions */,
 				06D7C11721B3D7C50018AB63 /* Networking */,
 				8F8E6EFB206C6C7700C24334 /* MapScene */,
 				064F9C4120622ACB00F1646E /* BikeListScene */,
@@ -166,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				06817DAA206BB584009ED562 /* MockJson */,
-				06FA764D206E081500FC4ACC /* MapWorkerTests.swift */,
+				06D7C13121BBDADD0018AB63 /* MapWorkerTests.swift */,
 				064F9C27206220D100F1646E /* Info.plist */,
 			);
 			path = BikeShareTests;
@@ -242,6 +256,25 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		06D7C11C21B40C460018AB63 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				06D7C12121B46AA20018AB63 /* RegionCollectionView.swift */,
+				06D7C11D21B40C880018AB63 /* RegionCollectionViewCell.swift */,
+				06D7C11E21B40C880018AB63 /* RegionCollectionViewCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		06D7C12E21BBCB7F0018AB63 /* Regions */ = {
+			isa = PBXGroup;
+			children = (
+				06D7C12721BB947E0018AB63 /* Regions.swift */,
+				06D7C12921BB95EB0018AB63 /* region_abbreviations.json */,
+			);
+			path = Regions;
+			sourceTree = "<group>";
+		};
 		0C0B2E680168A3A1E5207433 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +305,7 @@
 				064F9C4B206B8DDB00F1646E /* Mapper */,
 				064F9C4020622ABC00F1646E /* Models */,
 				8F8E6EFE206C6CB200C24334 /* Views */,
+				06D7C11C21B40C460018AB63 /* CollectionView */,
 				8FC5BED2206C7DE300BAC377 /* MapConfigurator.swift */,
 				8FC5BEC6206C73E600BAC377 /* MapViewController.swift */,
 				8FC5BEC8206C788200BAC377 /* MapInteractor.swift */,
@@ -279,6 +313,7 @@
 				8FC5BED0206C7A8500BAC377 /* MapPresenter.swift */,
 				8FC5BECA206C792900BAC377 /* MapWorker.swift */,
 				8FC5BECE206C798B00BAC377 /* MapService.swift */,
+				06D7C12C21BB96180018AB63 /* RegionService.swift */,
 			);
 			path = MapScene;
 			sourceTree = "<group>";
@@ -381,6 +416,8 @@
 				064F9C4320622BA900F1646E /* BikeShareCityTableViewCell.xib in Resources */,
 				064F9C18206220D100F1646E /* Assets.xcassets in Resources */,
 				064F9C16206220D100F1646E /* BikeList.storyboard in Resources */,
+				06D7C12A21BB95EB0018AB63 /* region_abbreviations.json in Resources */,
+				06D7C12021B40C880018AB63 /* RegionCollectionViewCell.xib in Resources */,
 				8F8E6EFD206C6CAB00C24334 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +500,7 @@
 				064F9C332062216D00F1646E /* BikeShareCity.swift in Sources */,
 				8FC5BECB206C792900BAC377 /* MapWorker.swift in Sources */,
 				064F9C372062228000F1646E /* BikeShareCityViewModel.swift in Sources */,
+				06D7C12221B46AA20018AB63 /* RegionCollectionView.swift in Sources */,
 				8FC5BEC9206C788200BAC377 /* MapInteractor.swift in Sources */,
 				06817DB6206D0B9F009ED562 /* BikeShareRouter.swift in Sources */,
 				064F9C11206220D100F1646E /* AppDelegate.swift in Sources */,
@@ -470,9 +508,11 @@
 				064F9C3F2062268F00F1646E /* BikeShareViewController.swift in Sources */,
 				06C353C8207C97E4008CC180 /* BikeShareLocation.swift in Sources */,
 				06D7C11921B3D7DA0018AB63 /* BaseRequest.swift in Sources */,
+				06D7C12D21BB96180018AB63 /* RegionService.swift in Sources */,
 				064F9C4A206B8D4800F1646E /* BikeShareMapper.swift in Sources */,
 				8F6E977E207344A20051526D /* SearchBarView.swift in Sources */,
 				064F9C4D206B98BC00F1646E /* BikeShareConfigurator.swift in Sources */,
+				06D7C12821BB947E0018AB63 /* Regions.swift in Sources */,
 				8FC500A5206CA705007BF92C /* MapRouter.swift in Sources */,
 				06C353C6207C97B5008CC180 /* BikeListViewModel.swift in Sources */,
 				8FC5BED3206C7DE300BAC377 /* MapConfigurator.swift in Sources */,
@@ -482,6 +522,7 @@
 				06C353C3207C973E008CC180 /* MapToBikeListViewModel.swift in Sources */,
 				064F9C312062212100F1646E /* BikeShareCityResponse.swift in Sources */,
 				064F9C4520622DC100F1646E /* BikeShareCityTableViewCell.swift in Sources */,
+				06D7C11F21B40C880018AB63 /* RegionCollectionViewCell.swift in Sources */,
 				064F9C35206221FD00F1646E /* CityLocation.swift in Sources */,
 				8FC5BEC7206C73E600BAC377 /* MapViewController.swift in Sources */,
 			);
@@ -491,8 +532,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06FA764E206E081500FC4ACC /* MapWorkerTests.swift in Sources */,
 				06817DA8206BB390009ED562 /* BikeShareCityResponse.swift in Sources */,
+				06D7C13521BBDB5B0018AB63 /* MapService.swift in Sources */,
+				06D7C13421BBDB580018AB63 /* MapWorker.swift in Sources */,
+				06D7C13321BBDB530018AB63 /* BaseRequest.swift in Sources */,
+				06D7C13221BBDADD0018AB63 /* MapWorkerTests.swift in Sources */,
 				06817DA9206BB4D0009ED562 /* BikeShareCity.swift in Sources */,
 				06817DAD206BB870009ED562 /* CityLocation.swift in Sources */,
 			);

@@ -7,8 +7,9 @@
 //
 
 protocol MapPresentationLogic {
-    func presentBikeShareCities(response: BikeShareCityResponse)
+    func presentBikeShareCities(response: [BikeShareCityViewModel])
     func presentError(error: Error)
+    func present(regions: [String])
 }
 private enum Constants {
     static let errorTitle = "Error"
@@ -17,15 +18,17 @@ private enum Constants {
 class MapPresenter: MapPresentationLogic {
     weak var viewController: MapDisplay?
     
-    func presentBikeShareCities(response: BikeShareCityResponse) {
-        let viewModels = mapDataToViewModels(response: response)
-        
+    func presentBikeShareCities(response: [BikeShareCityViewModel]) {
         viewController?.hideActivityIndicatorView()
-        viewController?.displayBikeShareCities(viewModel: viewModels)
+        viewController?.displayBikeShareCities(viewModel: response)
     }
     
     func presentError(error: Error) {
         viewController?.hideActivityIndicatorView()
         viewController?.displayError(title: Constants.errorTitle, message: error.localizedDescription, buttonTitle: Constants.ok)
+    }
+
+    func present(regions: [String]) {
+        viewController?.display(regions: regions)
     }
 }

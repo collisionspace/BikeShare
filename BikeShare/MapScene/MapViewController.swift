@@ -14,6 +14,7 @@ protocol MapDisplay: class {
     func displayError(title: String, message: String, buttonTitle: String)
     func showActivityIndicatorView()
     func hideActivityIndicatorView()
+    func display(regions: [String])
 }
 class MapViewController: UIViewController, MapDisplay {
 
@@ -22,7 +23,8 @@ class MapViewController: UIViewController, MapDisplay {
     
     var interactor: MapUseCase?
     var router: (MapRouterDelegate & MapDataStorePassing)?
-    
+    private var regions = [String]()
+    private var annotations = [MGLPointAnnotation]()
     override func awakeFromNib() {
         super.awakeFromNib()
         MapConfigurator.sharedInstance.configure(viewController: self)
@@ -43,8 +45,8 @@ class MapViewController: UIViewController, MapDisplay {
     }
     
     func displayBikeShareCities(viewModel: [BikeShareCityViewModel]?) {
+        mapView.removeAnnotations(annotations)
         if let viewModel = viewModel {
-            interactor?.setViewModels(viewModels: viewModel)
             for index in 0..<viewModel.count {
                 createAnnotation(viewModel: viewModel[index])
             }
@@ -62,6 +64,12 @@ class MapViewController: UIViewController, MapDisplay {
     func hideActivityIndicatorView() {
         
     }
+
+    
+    func display(regions: [String]) {
+        self.regions = regions
+        collectionViewSetup()
+    }
     
     // MARK: Private Functions
     
@@ -71,15 +79,31 @@ class MapViewController: UIViewController, MapDisplay {
         mapView.userTrackingMode = .follow
         self.tabBar.delegate = self
         interactor?.getBikeShareCities()
+        interactor?.getRegions()
     }
     
     private func createAnnotation(viewModel: BikeShareCityViewModel) {
+        guard let location = viewModel.location,
+              let latitude = location.latitude,
+              let longitude = location.longitude else { return }
         let city = MGLPointAnnotation()
-        city.coordinate = CLLocationCoordinate2D(latitude: (viewModel.location?.latitude)!, longitude: (viewModel.location?.longitude)!)
+        city.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         city.title = viewModel.bikeShareName
         city.subtitle = viewModel.cityCountry
     
         mapView.addAnnotation(city)
+        annotations.append(city)
+    }
+
+    private func collectionViewSetup() {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = CGSize(width: 100, height: 30)
+
+        let regionCollectionView = RegionCollectionView(regions: self.regions, frame: .zero, collectionViewLayout: layout)
+        regionCollectionView.regionCollectionDelegate = self
+        self.view.addSubview(regionCollectionView)
+        regionCollectionView.setupConstraints(view: self.view)
     }
 }
 
@@ -101,6 +125,12 @@ extension MapViewController: MGLMapViewDelegate {
 
 extension MapViewController: LocationChangeDelegate {
     func locationChange(location: CLLocation) {
-        mapView.setCenter(location.coordinate, zoomLevel: 14, animated: false)
+        mapView.setCenter(location.coordinate, zoomLevel: 8, animated: false)
+    }
+}
+
+extension MapViewController: RegionCollectionDelegate {
+    func  didSelect(region: String) {
+        interactor?.filterBy(region: region)
     }
 }
