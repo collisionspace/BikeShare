@@ -7,6 +7,7 @@
 //
 
 class BikeListViewModel {
+    private(set) var id: String?
     private(set) var href: String?
     private(set) var bikeShareName: String?
     private(set) var location: BikeShareLocation?
@@ -18,7 +19,8 @@ class BikeListViewModel {
         return nil
     }
     
-    init(href: String?, bikeShareName: String?, location: BikeShareLocation?) {
+    init(id: String?, href: String?, bikeShareName: String?, location: BikeShareLocation?) {
+        self.id = id
         self.href = href
         self.bikeShareName = bikeShareName
         self.location = location

@@ -7,6 +7,7 @@
 //
 
 struct BikeShareCityViewModel {
+    private(set) var id: String?
     private(set) var href: String?
     private(set) var bikeShareName: String?
     private(set) var location: CityLocation?

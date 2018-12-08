@@ -11,7 +11,7 @@ import Foundation
 func mapDataToViewModels(response: [BikeShareCity]) -> [BikeShareCityViewModel] {
     let viewModels = response.map {
         (bikeShareCity: BikeShareCity) -> BikeShareCityViewModel in
-        BikeShareCityViewModel(href: bikeShareCity.href, bikeShareName: bikeShareCity.name, location: bikeShareCity.location)
+        BikeShareCityViewModel(id: bikeShareCity.id, href: bikeShareCity.href, bikeShareName: bikeShareCity.name, location: bikeShareCity.location)
     }
     
     return viewModels

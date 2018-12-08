@@ -9,7 +9,8 @@
 func mapToBikeListViewModel(bikeShareViewModels: [BikeShareCityViewModel]) -> [BikeListViewModel]  {
     let viewModels = bikeShareViewModels.map {
         (bikeShareCityViewModel: BikeShareCityViewModel) -> BikeListViewModel in
-        BikeListViewModel(href: bikeShareCityViewModel.href,
+        BikeListViewModel(id: bikeShareCityViewModel.id,
+                          href: bikeShareCityViewModel.href,
                           bikeShareName: bikeShareCityViewModel.bikeShareName,
                           location: BikeShareLocation(city: bikeShareCityViewModel.location?.city,
                                                       country: bikeShareCityViewModel.location?.country,
