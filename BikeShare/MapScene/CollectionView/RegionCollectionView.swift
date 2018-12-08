@@ -16,6 +16,7 @@ class RegionCollectionView: UICollectionView, UICollectionViewDataSource, UIColl
     weak var regionCollectionDelegate: RegionCollectionDelegate?
 
     private var regions = [String]()
+    private var hasBeenInitialized = false
 
     init(regions: [String], frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         self.regions = regions
@@ -64,13 +65,19 @@ class RegionCollectionView: UICollectionView, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return regions.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Region", for: indexPath) as! RegionCollectionViewCell
-        myCell.regionTitle.text = regions[indexPath.row]
-        return myCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Region", for: indexPath) as! RegionCollectionViewCell
+        let row = indexPath.row
+        if row == 0 && !hasBeenInitialized {
+            self.selectItem(at: indexPath, animated: true, scrollPosition: .left)
+            cell.isSelected = true
+            hasBeenInitialized = true
+        }
+        cell.regionTitle.text = regions[row]
+        return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         regionCollectionDelegate?.didSelect(region: regions[indexPath.row])
     }

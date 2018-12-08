@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikeShare/MapScene/CollectionView/RegionCollectionViewCell.swift"
-            timestampString = "565960045.089159"
+            timestampString = "565963318.092077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "preferredLayoutAttributesFitting(_:)"
             landmarkType = "7">
          </BreakpointContent>

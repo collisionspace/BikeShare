@@ -14,9 +14,18 @@ class RegionCollectionViewCell: UICollectionViewCell {
 
     var isLayoutCalculated = false
 
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                self.contentView.backgroundColor = UIColor.lightGray
+            } else {
+                self.contentView.backgroundColor = UIColor.white
+            }
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
