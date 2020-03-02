@@ -31,7 +31,6 @@
 		06C353C6207C97B5008CC180 /* BikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C353C5207C97B5008CC180 /* BikeListViewModel.swift */; };
 		06C353C8207C97E4008CC180 /* BikeShareLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C353C7207C97E4008CC180 /* BikeShareLocation.swift */; };
 		06D7C11921B3D7DA0018AB63 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D7C11821B3D7DA0018AB63 /* BaseRequest.swift */; };
-		06FA764B206E066A00FC4ACC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA764C206E066A00FC4ACC /* Alamofire.framework */; };
 		06FA764E206E081500FC4ACC /* MapWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA764D206E081500FC4ACC /* MapWorkerTests.swift */; };
 		3D53D51532BCFB1439959445 /* Pods_BikeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83AC6E83DA824934800AF4F /* Pods_BikeShare.framework */; };
 		8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0C345095ACD77A0703EBB /* Pods_BikeShareTests.framework */; };
@@ -120,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06FA764B206E066A00FC4ACC /* Alamofire.framework in Frameworks */,
 				8D3F44BF56E9762D2512ADBD /* Pods_BikeShareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

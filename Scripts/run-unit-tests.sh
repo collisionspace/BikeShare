@@ -13,9 +13,9 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 WORKSPACE_PATH='BikeShare.xcworkspace'
-TESTS_SCHEME='BikeShare: Debug, Unit Tests only'
+TESTS_SCHEME='BikeShare'
 
-XCODEBUILD_DESTINATION="platform=iOS Simulator,name=iPhone X"
+XCODEBUILD_DESTINATION="platform=iOS Simulator,name=iPhone 11 Pro Max"
 
 echo "---"
 echo "++ Running Bootstrap"
