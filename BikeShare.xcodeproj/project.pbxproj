@@ -85,6 +85,7 @@
 		06C353C2207C973E008CC180 /* MapToBikeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToBikeListViewModel.swift; sourceTree = "<group>"; };
 		06C353C5207C97B5008CC180 /* BikeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListViewModel.swift; sourceTree = "<group>"; };
 		06C353C7207C97E4008CC180 /* BikeShareLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeShareLocation.swift; sourceTree = "<group>"; };
+		06D35EE2240D30A700A873E5 /* run-unit-tests.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "run-unit-tests.sh"; sourceTree = "<group>"; };
 		06D7C11821B3D7DA0018AB63 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		06FA764C206E066A00FC4ACC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FA764D206E081500FC4ACC /* MapWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorkerTests.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		064F9C04206220D100F1646E = {
 			isa = PBXGroup;
 			children = (
+				0663A9B2240D307800DC1A7C /* Scripts */,
 				064F9C0F206220D100F1646E /* BikeShare */,
 				064F9C24206220D100F1646E /* BikeShareTests */,
 				064F9C0E206220D100F1646E /* Products */,
@@ -206,6 +208,14 @@
 				06C353C2207C973E008CC180 /* MapToBikeListViewModel.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		0663A9B2240D307800DC1A7C /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				06D35EE2240D30A700A873E5 /* run-unit-tests.sh */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 		06817DAA206BB584009ED562 /* MockJson */ = {
