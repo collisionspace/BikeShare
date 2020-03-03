@@ -1,0 +1,8 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run tests"
+  lane :tests do
+  	run_tests(scheme: "BikeShare")
+  end
+end
