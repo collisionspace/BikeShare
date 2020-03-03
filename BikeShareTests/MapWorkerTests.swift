@@ -24,9 +24,9 @@ class MapWorkerTests: XCTestCase {
 //            }
         }
     }
-    
+
      var mapWorker: MapWorker!
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -34,12 +34,12 @@ class MapWorkerTests: XCTestCase {
 
         mapWorker = MapWorker(mapService: service)
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testGetBikeShareCities() {
         mapWorker.getBikeShareCities(addressString: "https://api.citybik.es/v2/networks") { result in
 //            switch result {
@@ -57,7 +57,7 @@ class MapWorkerTests: XCTestCase {
 //                print(error.localizedDescription)
 //            }
         }
-        
+
         mapWorker.getBikeShareCities(addressString: "") { result in
 //            switch result {
 //            case .success(_): break
